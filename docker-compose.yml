@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  angular-cosmosdb:
+    image: johnpapa/angular-cosmosdb:latest
+    build: .
+    environment:
+      NODE_ENV: production
+      TWITTER_CALLBACK_URL: http://localhost:3001/api/auth/twitter/callback
+    ports:
+      - 3001:3001
+    command: node index.js
